@@ -106,4 +106,43 @@
     <fieldset>
       <legend>4. Web Project</legend>
       <label for="webProject">Upload a link to a past web project (PDF/Screenshot):</label>
-      <input type="url" id="webProject" name="webProject" placeholder
+      <input type="url" id="webProject" name="webProject" placeholder="Enter link to project" required>
+    </fieldset>
+
+    <fieldset>
+      <legend>5. Kenyan Hosting Provider</legend>
+      <label for="hostingProvider">Select a Kenyan hosting provider that supports M-Pesa payments:</label>
+      <select id="hostingProvider" name="hostingProvider" required>
+        <option value="Safaricom Cloud">Safaricom Cloud</option>
+      </select>
+    </fieldset>
+
+    <fieldset>
+      <legend>6. Optimizing for 2G/3G Networks</legend>
+      <label for="optimization">How would you optimize a web app for Nairobi users on 2G/3G networks?</label>
+      <textarea id="optimization" name="optimization" rows="4" placeholder="Explain using PWA, lazy loading, and CDN strategies" required></textarea>
+    </fieldset>
+
+    <fieldset>
+      <legend>7. Kenyan Tech Startups</legend>
+      <label for="techStartups">Name two Kenyan tech startups actively hiring full-stack developers:</label>
+      <input type="text" id="techStartups" name="techStartups" placeholder="Example: Cellulant, Twiga Foods" required>
+    </fieldset>
+
+    <fieldset>
+      <legend>8. Freelancing Platforms</legend>
+      <label for="freelancingPlatforms">Name two Kenyan freelancing platforms for web developers besides Upwork/Fiverr:</label>
+      <input type="text" id="freelancingPlatforms" name="freelancingPlatforms" placeholder="Example: Kuhustle, WorkPay Africa" required>
+    </fieldset>
+
+    <fieldset>
+      <label>
+        <input type="checkbox" name="certify" required>
+        I certify that all responses are original and not AI-generated.
+      </label>
+    </fieldset>
+
+    <button type="submit">Submit</button>
+  </form>
+</body>
+</html>
