@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>USIU Advanced Web Development Evaluation Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background-color: #000; /* Black background */
+      color: #fff; /* White text */
+      padding: 20px;
+    }
+    form {
+      max-width: 600px;
+      margin: auto;
+      background: #333; /* Dark gray form background */
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+    }
+    fieldset {
+      border: 1px solid #555; /* Lighter gray border for the fieldset */
+      margin-bottom: 15px;
+      padding: 10px;
+    }
+    legend {
+      font-weight: bold;
+      color: #fff;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    input, select, textarea, button {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #555; /* Gray border */
+      border-radius: 4px;
+      background-color: #222; /* Darker background for inputs */
+      color: #fff; /* White text */
+      box-sizing: border-box;
+    }
+    input::placeholder, textarea::placeholder {
+      color: #bbb; /* Light gray placeholder text */
+    }
+    button {
+      background-color: #007BFF; /* Blue button */
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3; /* Darker blue on hover */
+    }
+  </style>
+</head>
+<body>
+  <form method="post" action="process_form.php">
+    <fieldset>
+      <legend>USIU Advanced Web Development Evaluation Form</legend>
+      <label for="fullName">Full Name:</label>
+      <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
+      
+      <label for="studentID">Student ID:</label>
+      <input type="text" id="studentID" name="studentID" placeholder="Enter your USIU Student ID" required>
+      
+      <label for="email">USIU Email Address:</label>
+      <input type="email" id="email" name="email" placeholder="Enter your USIU email" required>
+      
+      <label for="github">GitHub Profile URL:</label>
+      <input type="url" id="github" name="github" placeholder="Enter your GitHub profile URL" required>
+      
+      <label for="phone">Local Phone Number (WhatsApp-enabled):</label>
+      <input type="tel" id="phone" name="phone" placeholder="+2547XX-XXX-XXX" pattern="^\+2547\d{2}-\d{3}-\d{3}$" required>
+    </fieldset>
+
+    <fieldset>
+      <legend>1. Nairobi-Specific Problem Solving</legend>
+      <label for="apiSolution">Describe your API security and scalability solution for Nairobi matatu integration:</label>
+      <textarea id="apiSolution" name="apiSolution" rows="4" required></textarea>
+    </fieldset>
+
+    <fieldset>
+      <legend>2. Best JavaScript Framework</legend>
+      <label for="jsFramework">Select the best JavaScript framework for real-time Nairobi news aggregation:</label>
+      <select id="jsFramework" name="jsFramework" required>
+        <option value="React.js">React.js</option>
+        <option value="Vue.js">Vue.js</option>
+      </select>
+    </fieldset>
+
+    <fieldset>
+      <legend>3. Laravel Optimization</legend>
+      <label for="laravelOptimization">Which Laravel optimization method is best for a Nairobi e-commerce startup?</label>
+      <select id="laravelOptimization" name="laravelOptimization" required>
+        <option value="Database Caching">Database Caching</option>
+        <option value="Queues & Job Scheduling">Queues & Job Scheduling</option>
+        <option value="Horizontal Scaling">Horizontal Scaling</option>
+      </select>
+    </fieldset>
+
+    <fieldset>
+      <legend>4. Web Project</legend>
+      <label for="webProject">Upload a link to a past web project (PDF/Screenshot):</label>
+      <input type="url" id="webProject" name="webProject" placeholder
