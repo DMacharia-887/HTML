@@ -1,40 +1,43 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<style>
-#div1 {
-  position: absolute;
-  left: 50px;
-  width: calc(100% - 100px);
-  border: 1px solid black;
-  background-color: yellow;
-  padding: 5px;
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Dennis Macharia's personal website showcasing skills, projects, and more.">
+  <title>About Me - Dennis Macharia</title>
+  <link rel="stylesheet" href="assets/styles/styles.css">
+  <script defer src="assets/scripts/script.js"></script>
 </head>
 <body>
-<h1>My Website</h1>
-<h2>About Me</h2>
-<p>My name is Dennis Macharia. I'm an APT student in USIU. I'm 23 years old and I love anything to do with cars and racing.<p>
-<p>I love the Mini Cooper Clubman</p>
-<br>
-<div id="div1">The Clubman F54 features a distinctive design with its extended body, split rear doors, and increased cabin space, making it more suitable for families or those needing extra storage.</div>
-<br>
-<br>
-<img src="f54.jpg" alt="Clubman" width="480" height="360">
-<br>
-<a href="css.html" target="_blank">CSS Maths</a>
-<br>
-<a href="form.html" target="_blank"> Form Details</a>
-<br>
-<a href="form2.html" target="_blank"> USIU Evaluation Form</a> 
-<br>
-<a href="Javascript.html" target="_blank"> Date & Time</a>
-<br>
-<a href="JShead.html" target="_blank"> Demo JS in head</a>
-<br>
-<a href="JSbody.html" target="_blank"> Demo JS in body</a>
-<br>
-<a href="JSexternal.html" target="_blank"> Demo external JS</a>
+  <header>
+    <h1>Welcome to My Website</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="w3.html" class="active">About Me</a></li>
+        <li><a href="portfolio.html">Projects Portfolio</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="about">
+      <h2>About Me</h2>
+      <p>My name is Dennis Macharia. I'm an APT student in USIU. I'm 23 years old and I love anything to do with cars and racing.</p>
+      <p>I love the Mini Cooper Clubman.</p>
+      <img src="assets/images/f54.jpg" alt="Mini Cooper Clubman" width="480" height="360">
+    </section>
+
+    <section id="favorite-car">
+      <h2>My Favorite Car</h2>
+      <p>The Clubman F54 features a distinctive design with its extended body, split rear doors, and increased cabin space, making it more suitable for families or those needing extra storage.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Dennis Macharia. All rights reserved.</p>
+  </footer>
 </body>
 </html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Dennis Macharia's project portfolio.">
+  <title>Projects Portfolio - Dennis Macharia</title>
+  <link rel="stylesheet" href="assets/styles/styles.css">
+  <script defer src="assets/scripts/script.js"></script>
+</head>
+<body>
+  <header>
+    <h1>My Projects Portfolio</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="w3.html">About Me</a></li>
+        <li><a href="portfolio.html" class="active">Projects Portfolio</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="portfolio">
+      <h2>Projects</h2>
+      <div id="filters">
+        <button data-filter="all">All</button>
+        <button data-filter="web">Web Development</button>
+        <button data-filter="data">Data Science</button>
+        <button data-filter="ai">AI Projects</button>
+      </div>
+      <div id="projects">
+        <div class="project" data-category="web">
+          <h3>Project 1: Personal Website</h3>
+          <p>A responsive personal website built with HTML, CSS, and JavaScript.</p>
+        </div>
+        <div class="project" data-category="data">
+          <h3>Project 2: Data Analysis</h3>
+          <p>Analyzed sales data using Python and visualized results with Matplotlib.</p>
+        </div>
+        <div class="project" data-category="ai">
+          <h3>Project 3: Chatbot</h3>
+          <p>Developed an AI-powered chatbot using Python and TensorFlow.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Dennis Macharia. All rights reserved.</p>
+  </footer>
+</body>
+</html>
