@@ -89,6 +89,11 @@ form button:hover {
   background-color: #555;
 }
 
+/* Style for description list */
+dl dt {
+  font-weight: bold;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   nav ul {
