@@ -45,23 +45,76 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Dynamic Blog Posts
+  // Dynamic Blog Posts with Expandable Content
   const blogPosts = [
-    { title: "My First Blog Post", content: "This is the content of my first blog post." },
-    { title: "Learning JavaScript", content: "JavaScript is a versatile programming language." },
-    { title: "Building a Portfolio", content: "Tips and tricks for creating a great portfolio." },
+    {
+      title: "My First Blog Post",
+      content: `This is the beginning of my blogging journey. I’ve wanted to start a blog for a while, but like many people, I kept putting it off. Today, I decided to just hit "publish" and stop overthinking it.
+
+This blog will be a place for me to share what I’m learning, things I’m building, and thoughts I want to put into the world. Whether it’s coding, design, personal development, or just something interesting I came across — if it feels worth sharing, it’s going here.
+
+Thanks for reading, and let’s see where this goes.`,
+    },
+    {
+      title: "Learning JavaScript",
+      content: `JavaScript is one of the first programming languages many people learn — and for good reason. It’s everywhere: websites, apps, games, even servers. If you’re learning to code in 2025, JavaScript is still one of the best places to start.
+
+What makes it so useful is how quickly you can see results. A few lines of code and suddenly, you’re interacting with a webpage. It’s also got a huge ecosystem, from frameworks like React and Vue to tools like Node.js that let you run JavaScript outside the browser.
+
+Right now, I’m working on understanding functions, DOM manipulation, and basic event handling. Next up: diving into asynchronous programming and APIs.`,
+    },
+    {
+      title: "Building a Portfolio",
+      content: `If you’re in tech, design, or any creative field, a strong portfolio is essential. It’s not just a collection of work — it’s proof of what you can do, how you think, and what kind of problems you solve.
+
+Here are a few tips I’ve picked up:
+
+- Show your best work, not all your work. Quality over quantity.
+- Explain your process. What was the goal? What challenges did you face? How did you solve them?
+- Make it easy to navigate. A clean, simple layout helps your work stand out.
+- Keep it updated. It’s easy to forget, but stale portfolios send the wrong message.
+
+I’m currently working on mine and will share a walkthrough soon.`,
+    },
   ];
 
   const blogContainer = document.getElementById("blog-posts");
   if (blogContainer) {
-    blogPosts.forEach((post) => {
+    blogPosts.forEach((post, index) => {
       const postElement = document.createElement("div");
       postElement.classList.add("blog-post");
+
+      // Create a short preview of the content
+      const previewContent = post.content.split("\n")[0]; // First paragraph as preview
+
       postElement.innerHTML = `
         <h3>${post.title}</h3>
-        <p>${post.content}</p>
+        <p class="preview">${previewContent}</p>
+        <p class="full-content" style="display: none;">${post.content}</p>
+        <button class="read-more" data-index="${index}">Read More</button>
       `;
+
       blogContainer.appendChild(postElement);
+    });
+
+    // Add event listeners to "Read More" buttons
+    const readMoreButtons = document.querySelectorAll(".read-more");
+    readMoreButtons.forEach((button) => {
+      button.addEventListener("click", (event) => {
+        const postElement = event.target.parentElement;
+        const fullContent = postElement.querySelector(".full-content");
+        const preview = postElement.querySelector(".preview");
+
+        if (fullContent.style.display === "none") {
+          fullContent.style.display = "block";
+          preview.style.display = "none";
+          button.textContent = "Read Less";
+        } else {
+          fullContent.style.display = "none";
+          preview.style.display = "block";
+          button.textContent = "Read More";
+        }
+      });
     });
   }
 });
