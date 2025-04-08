@@ -1,4 +1,4 @@
-/* Global . Remove any redundant code:Styles */ 
+/* Global . Remove any redundant code: Styles */
 body {
   background-color: #f8f9fa;
   color: #222;
@@ -15,6 +15,12 @@ body.dark-theme {
   color: #f1f1f1;
 }
 
+/* Add transition to specific elements */
+body, header, nav, footer, .content, button, input {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark theme specific styles */
 body.dark-theme header {
   background-color: #000;
   color: #fff;
@@ -343,99 +349,20 @@ body.dark-theme .blog-post p {
   background-color: #007acc;
   color: white;
   padding: 0.5rem 1rem;
-  border-radius: 8px;
   text-decoration: none;
+  border-radius: 5px;
   transition: background-color 0.3s ease;
 }
 
 body.dark-theme .read-more-btn {
   background-color: #ffa500;
-  color: #000;
+  color: black;
 }
 
 .read-more-btn:hover {
-  background-color: #005c99;
+  background-color: #005d99;
 }
 
-/* Contact Section */
-#contact-form {
-  max-width: 700px;
-  margin: 2rem auto;
-  padding: 2rem;
-  background: white;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
-  border-radius: 12px;
-}
-
-body.dark-theme #contact-form {
-  background-color: #2a2a2a;
-}
-
-#contact-form h2 {
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
-  text-align: center;
-}
-
-body.dark-theme #contact-form h2 {
-  color: #f1f1f1;
-}
-
-#contact-form p {
-  text-align: center;
-  margin-bottom: 2rem;
-}
-
-.form-group {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 1.5rem;
-}
-
-.form-group label {
-  font-size: 1.1rem;
-  margin-bottom: 0.5rem;
-}
-
-.form-group input,
-.form-group textarea {
-  padding: 10px;
-  font-size: 1rem;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  width: 100%;
-}
-
-body.dark-theme .form-group input,
-body.dark-theme .form-group textarea {
-  background-color: #444;
-  color: #fff;
-}
-
-.form-group input[type="submit"] {
-  background-color: #00bfa6;
-  color: white;
-  border: none;
-  cursor: pointer;
-  font-size: 1.1rem;
-  padding: 12px 20px;
-  border-radius: 8px;
-  transition: background-color 0.3s ease;
-}
-
-body.dark-theme .form-group input[type="submit"] {
-  background-color: #ffa500;
-}
-
-.form-group input[type="submit"]:hover {
-  background-color: #009e8b;
-}
-
-@media (max-width: 768px) {
-  nav ul {
-    flex-direction: column;
-  }
-  .hero h2 {
-    font-size: 2.5rem;
-  }
+body.dark-theme .read-more-btn:hover {
+  background-color: #e67300;
 }
