@@ -245,6 +245,7 @@ footer {
   background-color: #0056b3;
   transform: translateY(-2px);
 }
+
 /* BLOG POST STYLES */
 #blog {
   padding: 2rem;
@@ -381,151 +382,40 @@ nav ul li a.active {
   margin-bottom: 1.5rem;
 }
 
-label {
+.form-group label {
+  font-size: 1.1rem;
   margin-bottom: 0.5rem;
-  font-weight: 500;
 }
 
-input,
-textarea {
-  padding: 0.8rem 1rem;
-  border: 1px solid #ccc;
-  border-radius: 8px;
+.form-group input,
+.form-group textarea {
+  padding: 10px;
   font-size: 1rem;
-  resize: vertical;
-  transition: border 0.3s;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  width: 100%;
 }
 
-input:focus,
-textarea:focus {
-  border-color: #00bfa6;
-  outline: none;
-}
-
-.btn-primary {
-  background: #00bfa6;
+.form-group input[type="submit"] {
+  background-color: #00bfa6;
   color: white;
-  padding: 0.75rem 1.5rem;
   border: none;
-  font-size: 1rem;
-  border-radius: 8px;
   cursor: pointer;
-  transition: background 0.3s;
+  font-size: 1.1rem;
+  padding: 12px 20px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
 }
 
-.btn-primary:hover {
-  background: #009e8c;
+.form-group input[type="submit"]:hover {
+  background-color: #009e8b;
 }
 
-/* Social Links */
-.social-links {
-  margin-top: 2rem;
-  text-align: center;
-}
-
-.social-links h3 {
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
-}
-
-.social-links ul {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  flex-wrap: wrap;
-}
-
-.social-links a {
-  text-decoration: none;
-  color: #00bfa6;
-  font-weight: 500;
-  transition: color 0.3s;
-}
-
-.social-links a:hover {
-  color: #007b6e;
-}
-
-/* Footer */
-footer {
-  background: #222;
-  color: white;
-  text-align: center;
-  padding: 1rem 0;
-  margin-top: 3rem;
-}
-
-/* Responsive Tweaks */
-@media (max-width: 600px) {
-  #contact-form {
-    padding: 1.5rem;
-  }
-
+@media (max-width: 768px) {
   nav ul {
     flex-direction: column;
-    align-items: center;
   }
-
-  .form-group input,
-  .form-group textarea {
-    font-size: 0.95rem;
+  .hero h2 {
+    font-size: 2.5rem;
   }
 }
-
-/* Button Animation */
-button[type="submit"] {
-  position: relative;
-  overflow: hidden;
-  border-radius: 8px;
-  transition: background-color 0.4s, transform 0.4s;
-}
-
-button[type="submit"]:hover {
-  transform: scale(1.05);
-  background-color: #009e8c;
-}
-
-button[type="submit"]::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 300%;
-  height: 300%;
-  background-color: #00bfa6;
-  transition: width 0.4s, height 0.4s, top 0.4s, left 0.4s;
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-}
-
-button[type="submit"]:hover::before {
-  width: 0;
-  height: 0;
-  top: 50%;
-  left: 50%;
-}
-
-/* Toast Notification Styles */
-.toast {
-  position: fixed;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #333;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 8px;
-  font-size: 1rem;
-  display: none;
-  opacity: 0;
-  transition: opacity 0.5s ease, bottom 0.5s ease;
-}
-
-.toast.show {
-  display: block;
-  opacity: 1;
-  bottom: 40px;
-}
-

@@ -110,8 +110,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
-});
-document.addEventListener("DOMContentLoaded", () => {
+
   // Handle form submission and show toast notification
   const contactForm = document.getElementById("contact");
   const toast = document.createElement("div");
