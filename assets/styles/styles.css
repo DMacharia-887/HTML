@@ -194,13 +194,15 @@ footer {
 
 /* Hero Section */
 .hero {
-  background: linear-gradient(rgba(30,30,47,0.8), rgba(30,30,47,0.8)), url('assets/images/hero-bg.jpg') no-repeat center center/cover;
+  background: linear-gradient(rgba(30,30,47,0.8), rgba(30,30,47,0.8)), url('assets/images/me.jpg') no-repeat center center/cover;
   color: #fff;
   text-align: center;
   padding: 120px 20px;
   border-bottom: 6px solid #ff8c00;
 }
-
+body.dark-theme .hero {
+  background: linear-gradient(rgba(30,30,47,0.8), rgba(30,30,47,0.8)), url('assets/images/me.jpg') no-repeat center center/cover;
+}
 .hero h2 {
   font-size: 3rem;
   margin-bottom: 1rem;
