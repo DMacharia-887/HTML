@@ -22,7 +22,7 @@
     <nav>
       <ul>
         <li><a href="index.html">Home</a></li>
-        <li><a href="w3.html">About Me</a></li>
+        <li><a href="about.html">About Me</a></li>
         <li><a href="portfolio.html" class="active">Projects Portfolio</a></li>
         <li><a href="blog.html">Blog</a></li>
         <li><a href="contact.html">Contact</a></li>
@@ -67,7 +67,7 @@
       </div>
     </section>
 
-    <!-- Call to Action Section (New) -->
+    <!-- Call to Action Section -->
     <section id="cta" class="cta">
       <h3>Interested in Collaborating?</h3>
       <p>Have a project in mind or want to discuss how we can work together? Reach out to me!</p>
@@ -79,24 +79,5 @@
     <p>&copy; 2025 Dennis Macharia. All rights reserved.</p>
   </footer>
 
-  <!-- JavaScript for Category Filter -->
-  <script>
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    const projects = document.querySelectorAll('.project');
-
-    filterButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        const category = button.getAttribute('data-filter');
-
-        projects.forEach(project => {
-          if (category === 'all' || project.getAttribute('data-category') === category) {
-            project.style.display = 'block';
-          } else {
-            project.style.display = 'none';
-          }
-        });
-      });
-    });
-  </script>
 </body>
 </html>
