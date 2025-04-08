@@ -18,7 +18,7 @@
 <body>
 
   <header>
-    <h1>My Blog</h1>
+    <h1>👋 My Blog</h1>
     <nav>
       <ul>
         <li><a href="index.html">Home</a></li>
@@ -28,32 +28,18 @@
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
+    <!-- The theme toggle button is injected dynamically via script.js -->
   </header>
 
   <main>
     <section id="blog">
-      <h2>Recent Posts</h2>
-      <div id="blog-posts">
-        <!-- Blog Post 1 -->
-        <div class="blog-post">
-          <h3><a href="post1.html">Exploring the Future of Web Development</a></h3>
-          <p>In this post, I delve into the current trends in web development, including new frameworks, libraries, and best practices...</p>
-          <a href="post1.html" class="read-more-btn">Read More</a>
-        </div>
+      <h2>📝 Latest Blog Posts</h2>
+      <p class="section-description">
+        Thoughts, tutorials, and reflections from my journey as a developer and tech enthusiast.
+      </p>
 
-        <!-- Blog Post 2 -->
-        <div class="blog-post">
-          <h3><a href="post2.html">Understanding Machine Learning in Simple Terms</a></h3>
-          <p>Machine learning is revolutionizing various industries. In this post, I break down complex concepts into simple, easy-to-understand language...</p>
-          <a href="post2.html" class="read-more-btn">Read More</a>
-        </div>
-
-        <!-- Blog Post 3 -->
-        <div class="blog-post">
-          <h3><a href="post3.html">How To Stay Productive While Working From Home</a></h3>
-          <p>With more people working remotely, staying productive can be challenging. Here are some tips and tools to help you work more efficiently from home...</p>
-          <a href="post3.html" class="read-more-btn">Read More</a>
-        </div>
+      <div id="blog-posts" class="blog-container">
+        <!-- Blog posts will be injected dynamically by script.js -->
       </div>
 
       <!-- Pagination or Load More Button -->
@@ -68,10 +54,9 @@
   </footer>
 
   <script>
-    // Example function to load more posts (could be expanded with dynamic content loading)
+    // Example function to simulate loading more posts
     function loadMorePosts() {
-      alert("Loading more posts...");
-      // Ideally, this function would load more posts dynamically (e.g., via an API).
+      alert("Loading more posts... (To be implemented)");
     }
   </script>
 </body>

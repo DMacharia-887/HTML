@@ -1,100 +1,138 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Dynamic Greeting
-  const hours = new Date().getHours();
+  // Set dynamic greeting based on time of day
   const greeting = document.querySelector("header h1");
   if (greeting) {
+    const hours = new Date().getHours();
     if (hours < 12) {
-      greeting.textContent = "Good Morning! Welcome to My Website";
+      greeting.textContent = "☀️ Good Morning! Welcome to My Website";
     } else if (hours < 18) {
-      greeting.textContent = "Good Afternoon! Welcome to My Website";
+      greeting.textContent = "🌤️ Good Afternoon! Welcome to My Website";
     } else {
-      greeting.textContent = "Good Evening! Welcome to My Website";
+      greeting.textContent = "🌙 Good Evening! Welcome to My Website";
     }
   }
 
-  // Theme Toggle Button
+  // Theme toggle setup
   const toggleButton = document.createElement("button");
-  toggleButton.textContent = "Toggle Light/Dark Mode";
+  toggleButton.innerHTML = `<span class="theme-icon">🌓</span> Toggle Theme`;
   toggleButton.classList.add("theme-toggle");
   toggleButton.style.marginLeft = "10px";
 
-  // Insert next to nav
   const nav = document.querySelector("header nav");
-  if (nav) {
-    nav.appendChild(toggleButton);
-  } else {
-    document.body.prepend(toggleButton);
-  }
+  (nav || document.body).appendChild(toggleButton);
 
-  // Toggle theme logic
+  const setTheme = (theme) => {
+    document.body.classList.toggle("dark-theme", theme === "dark");
+    localStorage.setItem("theme", theme);
+  };
+
+  // Button listener for toggle
   toggleButton.addEventListener("click", () => {
-    document.body.classList.toggle("dark-theme");
-    localStorage.setItem("theme", document.body.classList.contains("dark-theme") ? "dark" : "light");
+    const newTheme = document.body.classList.contains("dark-theme") ? "light" : "dark";
+    setTheme(newTheme);
   });
 
-  // Apply stored theme
-  if (localStorage.getItem("theme") === "dark") {
-    document.body.classList.add("dark-theme");
-  }
+  // Apply stored theme on load
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") setTheme("dark");
 
-  // Portfolio Filtering
-  if (document.querySelector("#filters")) {
-    const filters = document.querySelectorAll("#filters button");
+  // Portfolio filtering (if present)
+  const filtersContainer = document.querySelector("#filters");
+  if (filtersContainer) {
+    const filters = filtersContainer.querySelectorAll("button");
     const projects = document.querySelectorAll(".project");
 
     filters.forEach((filter) => {
       filter.addEventListener("click", () => {
         const category = filter.getAttribute("data-filter");
         projects.forEach((project) => {
-          project.style.display = category === "all" || project.getAttribute("data-category") === category ? "block" : "none";
+          project.style.display =
+            category === "all" || project.getAttribute("data-category") === category
+              ? "block"
+              : "none";
         });
       });
     });
   }
 
-  // Blog Posts (only for blog.html)
-  if (document.getElementById("blog-posts")) {
+  // Blog post content (if blog section present)
+  const blogContainer = document.getElementById("blog-posts");
+  if (blogContainer) {
     const blogPosts = [
       {
         title: "My First Blog Post",
-        content: `This is the beginning of my blogging journey...`,
+        content: `This is the beginning of my blogging journey. I'm thrilled to start sharing my thoughts and experiences with the world. Stay tuned for more content coming soon!`
       },
       {
-        title: "Learning JavaScript",
-        content: `JavaScript is one of the first programming languages many people learn...`,
+        title: "Learning JavaScript in 2025",
+        content: `JavaScript continues to evolve and remains one of the most versatile languages in web development. Whether you're building front-end apps or server-side logic, it's still a go-to language.`
       },
       {
-        title: "Building a Portfolio",
-        content: `If you’re in tech, design, or any creative field, a strong portfolio is essential...`,
+        title: "Building a Personal Portfolio Site",
+        content: `A portfolio is your digital identity. It's where your work lives, and it’s the first impression for many employers or clients. Start simple, and iterate with real feedback.`
       },
+      {
+        title: "Exploring CSS Grid vs Flexbox",
+        content: `Both Grid and Flexbox are powerful layout systems in CSS. Grid is ideal for 2D layouts, while Flexbox shines in 1D. The key is knowing when and how to use them together.`
+      },
+      {
+        title: "Behind the Scenes: How I Designed This Website",
+        content: `Designing this site was a labor of love. I used a combination of Figma for mockups, VS Code for development, and feedback from friends to shape the final experience.`
+      }
     ];
 
-    const blogContainer = document.getElementById("blog-posts");
-    blogPosts.forEach((post, index) => {
+    blogPosts.forEach((post) => {
       const postElement = document.createElement("div");
       postElement.classList.add("blog-post");
+      const preview = post.content.split(".")[0] + ".";
 
-      const previewContent = post.content.split("\n")[0];
       postElement.innerHTML = `
         <h3>${post.title}</h3>
-        <p class="preview">${previewContent}</p>
+        <p class="preview">${preview}</p>
         <p class="full-content" style="display: none;">${post.content}</p>
-        <button class="read-more" data-index="${index}">Read More</button>
+        <button class="read-more">Read More</button>
       `;
 
       blogContainer.appendChild(postElement);
     });
 
-    document.querySelectorAll(".read-more").forEach((button) => {
-      button.addEventListener("click", (e) => {
+    // Read More / Read Less toggle
+    blogContainer.addEventListener("click", (e) => {
+      if (e.target.classList.contains("read-more")) {
         const post = e.target.closest(".blog-post");
         const full = post.querySelector(".full-content");
         const preview = post.querySelector(".preview");
         const expanded = full.style.display === "block";
+
         full.style.display = expanded ? "none" : "block";
         preview.style.display = expanded ? "block" : "none";
         e.target.textContent = expanded ? "Read More" : "Read Less";
-      });
+      }
+    });
+  }
+});
+document.addEventListener("DOMContentLoaded", () => {
+  // Handle form submission and show toast notification
+  const contactForm = document.getElementById("contact");
+  const toast = document.createElement("div");
+  toast.classList.add("toast");
+  toast.textContent = "Your message has been sent successfully!";
+  document.body.appendChild(toast);
+
+  if (contactForm) {
+    contactForm.addEventListener("submit", (e) => {
+      e.preventDefault(); // Prevent actual form submission for this demo
+      
+      // Show Toast
+      toast.classList.add("show");
+      
+      // Hide Toast after 3 seconds
+      setTimeout(() => {
+        toast.classList.remove("show");
+      }, 3000);
+      
+      // Reset form
+      contactForm.reset();
     });
   }
 });
