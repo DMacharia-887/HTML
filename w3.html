@@ -1,21 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Learn more about Dennis Macharia.">
-  <title>About Me - Dennis Macharia</title>
-  <link rel="stylesheet" href="assets/styles/styles.css">
-  <script defer src="assets/scripts/ProjectScript.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="About Dennis Macharia - A tech enthusiast and car lover." />
+  <title>About Me | Dennis Macharia</title>
+  <link rel="stylesheet" href="assets/styles/styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    header {
+      background-color: #1e1e2f;
+      color: white;
+      padding: 1.5rem 2rem;
+      text-align: center;
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 0;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    nav a.active {
+      border-bottom: 2px solid #ff8c00;
+    }
+
+    main {
+      padding: 2rem;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    section {
+      margin-bottom: 3rem;
+    }
+
+    h2 {
+      font-size: 2rem;
+      color: #1e1e2f;
+      margin-bottom: 1rem;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      margin-top: 1rem;
+    }
+
+    dl dt {
+      font-weight: bold;
+      margin-top: 1rem;
+    }
+
+    dl dd {
+      margin-left: 1rem;
+    }
+
+    footer {
+      background-color: #1e1e2f;
+      color: white;
+      text-align: center;
+      padding: 1rem 0;
+    }
+  </style>
 </head>
 <body>
   <header>
-    <h1>Welcome to My Website</h1>
+    <h1>Hi, I'm Dennis Macharia 👋</h1>
     <nav>
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="w3.html" class="active">About Me</a></li>
-        <li><a href="portfolio.html">Projects Portfolio</a></li>
+        <li><a href="portfolio.html">Projects</a></li>
         <li><a href="blog.html">Blog</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
@@ -25,49 +99,37 @@
   <main>
     <section id="about">
       <h2>About Me</h2>
-      <p>My name is Dennis Macharia. I'm an APT student in USIU. I'm 23 years old and I love anything to do with cars and racing.</p>
-      <p>I love the Mini Cooper Clubman.</p>
-      <img src="assets/images/f54.jpg" alt="Mini Cooper Clubman" width="480" height="360">
+      <p>I'm Dennis, a 23-year-old Applied Computer Technology student at USIU. I have a big passion for tech — and an even bigger one for fast cars and motorsports 🏎️.</p>
+      <p>When I'm not diving into code, I’m probably watching a race, researching automotive engineering, or checking out new models on the road.</p>
+      <img src="assets/images/f54.jpg" alt="Mini Cooper Clubman - Dennis' favorite car">
     </section>
 
     <section id="favorite-car">
-      <h2>My Favorite Car</h2>
-      <p>The Clubman F54 features a distinctive design with its extended body, split rear doors, and increased cabin space, making it more suitable for families or those needing extra storage.</p>
+      <h2>Favorite Ride: The Mini Cooper Clubman</h2>
+      <p>It’s compact, sporty, and loaded with character — just how I like it. Here's what makes the F54 Clubman stand out:</p>
       <dl>
-        <dt>Engine Type - Number of Cylinders:</dt>
-        <dd>Inline 3</dd>
-        <dt>Fuel Type:</dt>
-        <dd>Petrol</dd>
+        <dt>Engine:</dt>
+        <dd>Inline 3 Turbocharged with Intercooler</dd>
+        <dt>Horsepower:</dt>
+        <dd>134 HP @ 4500–6000 RPM</dd>
+        <dt>Torque:</dt>
+        <dd>230 Nm @ 1250–4000 RPM</dd>
+        <dt>Transmission:</dt>
+        <dd>6-speed Manual</dd>
+        <dt>Drive:</dt>
+        <dd>Front-Wheel Drive (FWD)</dd>
+        <dt>Displacement:</dt>
+        <dd>1499 cm³</dd>
         <dt>Fuel System:</dt>
-        <dd>Direct Injection</dd>
-        <dt>Engine Alignment:</dt>
-        <dd>Transverse</dd>
-        <dt>Engine Position:</dt>
-        <dd>Front</dd>
-        <dt>Engine Displacement:</dt>
-        <dd>1499 cm³ / 91.5 cu-in</dd>
-        <dt>Bore x Stroke:</dt>
-        <dd>82.0 x 94.6 mm (3.23 x 3.72 inches)</dd>
-        <dt>Number of Valves:</dt>
-        <dd>12 Valves</dd>
-        <dt>Aspiration:</dt>
-        <dd>Turbo + Intercooler</dd>
+        <dd>Direct Injection (Petrol)</dd>
         <dt>Compression Ratio:</dt>
         <dd>11.0</dd>
-        <dt>Horsepower:</dt>
-        <dd>136 PS / 134 HP / 100 kW @ 4500-6000 rpm</dd>
-        <dt>Maximum Torque:</dt>
-        <dd>230 Nm / 169 lb-ft @ 1250-4000 rpm</dd>
-        <dt>Drive Wheels - Traction - Drivetrain:</dt>
-        <dd>FWD</dd>
-        <dt>Transmission Gearbox - Number of Speeds:</dt>
-        <dd>6-speed Manual</dd>
       </dl>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 Dennis Macharia. All rights reserved.</p>
+    <p>&copy; 2025 Dennis Macharia. Built with 💻 and a love for speed.</p>
   </footer>
 </body>
 </html>

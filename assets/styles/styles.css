@@ -1,54 +1,103 @@
-/* General Styles */
+/* Global Styles */
 body {
-  background-color: #f4f4f4;
-  color: #333;
-  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+  color: #222;
+  font-family: 'Poppins', sans-serif;
   margin: 0;
   padding: 0;
+  line-height: 1.6;
 }
 
+/* Header */
 header {
-  background-color: #333;
-  color: #fff;
-  padding: 10px 20px;
+  background-color: #1e1e2f;
+  color: white;
+  padding: 2rem 1rem;
   text-align: center;
 }
 
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+/* Navigation */
 nav ul {
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin: 1rem 0 0;
   display: flex;
   justify-content: center;
-  gap: 15px;
+  gap: 1.5rem;
+  flex-wrap: wrap;
 }
 
 nav ul li a {
-  color: #fff;
+  color: white;
   text-decoration: none;
-  padding: 5px 10px;
-  border-radius: 4px;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
 }
 
 nav ul li a.active,
 nav ul li a:hover {
-  background-color: #555;
+  background-color: #ff8c00;
+  color: white;
 }
 
+/* Main Content */
 main {
-  padding: 20px;
-  max-width: 800px;
+  padding: 2rem;
+  max-width: 1000px;
   margin: auto;
 }
 
-footer {
-  background-color: #333;
-  color: #fff;
-  text-align: center;
-  padding: 10px 0;
+/* Section Titles */
+h2 {
+  font-size: 1.8rem;
+  color: #1e1e2f;
+  margin-bottom: 1rem;
 }
 
-/* Hero Section */
+/* About Image */
+img {
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-top: 1rem;
+}
+
+/* Car Specs Table */
+dl {
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+dl dt {
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+dl dd {
+  margin-left: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Footer */
+footer {
+  background-color: #1e1e2f;
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 0.9rem;
+  margin-top: 4rem;
+}
+
+/* Hero Section (Optional if you want to use one later) */
 .hero {
   background: url('assets/images/hero-bg.jpg') no-repeat center center/cover;
   color: #fff;
@@ -67,26 +116,81 @@ footer {
 }
 
 .hero .btn {
-  background-color: #007BFF;
+  background-color: #ff8c00;
   color: #fff;
-  padding: 10px 20px;
+  padding: 12px 24px;
   text-decoration: none;
-  border-radius: 5px;
+  border-radius: 6px;
   font-size: 1rem;
+  transition: background-color 0.3s;
 }
 
 .hero .btn:hover {
-  background-color: #0056b3;
+  background-color: #e67300;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
   nav ul {
     flex-direction: column;
-    gap: 10px;
+    gap: 0.75rem;
   }
 
-  footer {
-    position: static;
+  header h1 {
+    font-size: 1.5rem;
   }
+
+  main {
+    padding: 1.5rem;
+  }
+
+  .hero {
+    padding: 60px 20px;
+  }
+
+  .hero h2 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+}
+
+/* Blog Post Styles */
+#blog-posts {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.blog-post {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-post:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.blog-post h3 {
+  margin-bottom: 10px;
+}
+
+.read-more-btn {
+  display: inline-block;
+  background-color: #007bff;
+  color: #fff;
+  padding: 8px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  margin-top: 10px;
+}
+
+.read-more-btn:hover {
+  background-color: #0056b3;
 }
