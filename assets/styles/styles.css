@@ -8,6 +8,39 @@ body {
   line-height: 1.6;
 }
 
+/* Dark Theme Support */
+body.dark-theme {
+  background-color: #121212;
+  color: #f1f1f1;
+}
+
+body.dark-theme header {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+body.dark-theme nav ul li a {
+  color: #ffffff;
+}
+
+body.dark-theme nav ul li a.active,
+body.dark-theme nav ul li a:hover {
+  background-color: #ffa500;
+  color: #000;
+}
+
+body.dark-theme .blog-post,
+body.dark-theme dl {
+  background-color: #1e1e2f;
+  border-color: #333;
+  color: #f1f1f1;
+}
+
+body.dark-theme .read-more-btn {
+  background-color: #ffa500;
+  color: #000;
+}
+
 /* Header */
 header {
   background-color: #1e1e2f;
@@ -101,6 +134,7 @@ footer {
 .hero {
   background: url('assets/images/hero-bg.jpg') no-repeat center center/cover;
   color: #fff;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7); /* Add this line for better readability */
   text-align: center;
   padding: 100px 20px;
 }
