@@ -11,28 +11,24 @@ document.addEventListener("DOMContentLoaded", () => {
       greeting.textContent = "🌙 Good Evening! Welcome to My Website";
     }
   }
+// Get the theme toggle button
+const toggleButton = document.getElementById('theme-toggle');
 
-  // This function toggles dark/light mode
-function toggleTheme() {
-  document.body.classList.toggle('dark-theme');
-  // Save the theme preference in local storage so it persists across sessions
-  if (document.body.classList.contains('dark-theme')) {
-    localStorage.setItem('theme', 'dark');
-  } else {
-    localStorage.setItem('theme', 'light');
-  }
-}
+// Check for saved theme in localStorage or set to light by default
+const savedTheme = localStorage.getItem('theme') || 'light';
+document.body.classList.add(savedTheme + '-mode');  // Apply saved theme class
 
-// Load the theme preference from local storage
-window.onload = function() {
-  const savedTheme = localStorage.getItem('theme');
-  if (savedTheme === 'dark') {
-    document.body.classList.add('dark-theme');
-  }
-};
+// Toggle theme on button click
+toggleButton.addEventListener('click', () => {
+    const currentTheme = document.body.classList.contains('dark-mode') ? 'dark' : 'light';
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
 
-// Add an event listener to the theme toggle button
-document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
+    // Replace the old theme class with the new one
+    document.body.classList.replace(currentTheme + '-mode', newTheme + '-mode');
+
+    // Save the new theme in localStorage
+    localStorage.setItem('theme', newTheme);
+});
 
 
   // Portfolio filtering (if present)
