@@ -12,31 +12,28 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // Theme toggle setup
-  const toggleButton = document.createElement("button");
-  toggleButton.innerHTML = `<span class="theme-icon">🌓</span> Toggle Theme`;
-  toggleButton.classList.add("theme-toggle");
-  toggleButton.style.marginLeft = "10px";
+  // This function toggles dark/light mode
+function toggleTheme() {
+  document.body.classList.toggle('dark-theme');
+  // Save the theme preference in local storage so it persists across sessions
+  if (document.body.classList.contains('dark-theme')) {
+    localStorage.setItem('theme', 'dark');
+  } else {
+    localStorage.setItem('theme', 'light');
+  }
+}
 
-  const nav = document.querySelector("header nav");
-  (nav || document.body).appendChild(toggleButton);
+// Load the theme preference from local storage
+window.onload = function() {
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme === 'dark') {
+    document.body.classList.add('dark-theme');
+  }
+};
 
-  const setTheme = (theme) => {
-    // Remove "dark mode" class if present and toggle only the "dark-theme"
-    document.body.classList.remove("dark-mode");  // Removing any conflicting classes
-    document.body.classList.toggle("dark-theme", theme === "dark");
-    localStorage.setItem("theme", theme);
-  };
+// Add an event listener to the theme toggle button
+document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
 
-  // Button listener for toggle
-  toggleButton.addEventListener("click", () => {
-    const newTheme = document.body.classList.contains("dark-theme") ? "light" : "dark";
-    setTheme(newTheme);
-  });
-
-  // Apply stored theme on load
-  const savedTheme = localStorage.getItem("theme");
-  if (savedTheme === "dark") setTheme("dark");
 
   // Portfolio filtering (if present)
   const filtersContainer = document.querySelector("#filters");
