@@ -22,6 +22,8 @@ document.addEventListener("DOMContentLoaded", () => {
   (nav || document.body).appendChild(toggleButton);
 
   const setTheme = (theme) => {
+    // Remove "dark mode" class if present and toggle only the "dark-theme"
+    document.body.classList.remove("dark-mode");  // Removing any conflicting classes
     document.body.classList.toggle("dark-theme", theme === "dark");
     localStorage.setItem("theme", theme);
   };
